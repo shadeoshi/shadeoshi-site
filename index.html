@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="SHADEOSHI - A decentralized meme movement born from the shadow of Satoshi. No presale. No founders. Just chaos & memes." />
+  <meta name="keywords" content="SHADEOSHI, meme coin, BNB, decentralized, crypto, Satoshi, tokenomics, roadmap" />
+  <meta name="author" content="SHADEOSHI Team" />
+  <meta property="og:title" content="SHADEOSHI - From The Shadows" />
+  <meta property="og:description" content="A decentralized crypto myth born from the code echoes of Satoshi." />
+  <meta property="og:image" content="https://yourdomain.com/shadeoshi-logo.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SHADEOSHI - From The Shadows" />
+  <meta name="twitter:description" content="The fragment of Satoshi reborn. Meme-powered. Chaos-fueled." />
+  <meta name="twitter:image" content="https://yourdomain.com/shadeoshi-logo.png" />
+  <title>SHADEOSHI - From The Shadows</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .main-nav {
+      width: 100%;
+      background: #0a0a0aee;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 16px #00ffd022;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 2.5vw;
+    }
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+      flex: 0 1 auto;
+      justify-content: flex-start;
+    }
+    .main-nav a {
+      color: #00ffd0;
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .main-nav a:hover, .main-nav a.active {
+      background: #00ffd022;
+      color: #fff;
+    }
+    .nav-social {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex: 0 1 auto;
+      margin-left: auto;
+    }
+    .nav-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #111;
+      color: #00ffd0;
+      font-size: 1.3rem;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 8px #00ffd022;
+      text-decoration: none;
+    }
+    .nav-social a:hover {
+      background: #00ffd0;
+      color: #111;
+      box-shadow: 0 0 16px #00ffd044;
+    }
+    body {
+      padding-top: 64px;
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle at center, #000000, #0a0a0a);
+      color: #f0f0f0;
+    }
+    header {
+      text-align: center;
+      padding: 5rem 1rem 2rem;
+      background: linear-gradient(to bottom, #000000dd, #00000000);
+    }
+    header h1 {
+      font-size: 3.5rem;
+      margin: 0;
+      color: #00ffd0;
+    }
+    header p {
+      font-size: 1.4rem;
+      color: #aaa;
+    }
+    .buttons {
+      margin-top: 2rem;
+    }
+    .buttons a {
+      text-decoration: none;
+      color: #000;
+      background: #00ffd0;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      margin: 0.5rem;
+      font-weight: bold;
+      display: inline-block;
+      transition: all 0.2s ease-in-out;
+    }
+    .buttons a:hover {
+      background: #00cfa9;
+    }
+    section {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
+    h2 {
+      color: #00ffd0;
+      border-bottom: 2px solid #333;
+      padding-bottom: 0.5rem;
+      margin-top: 4rem;
+    }
+    .image-banner {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .image-banner img {
+      max-width: 300px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px #00ffd066;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .feature-box {
+      background: #111;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #00ffd022;
+      width: 280px;
+      transition: transform 0.3s ease;
+    }
+    .feature-box:hover {
+      transform: translateY(-6px);
+    }
+    .feature-box h3 {
+      color: #00ffd0;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #777;
+      border-top: 1px solid #222;
+    }
+    .tokenomics, .roadmap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+    .tokenomics .text, .roadmap .text {
+      flex: 1 1 50%;
+    }
+    .tokenomics .image, .roadmap .image {
+      flex: 1 1 45%;
+      text-align: center;
+    }
+    .tokenomics img, .roadmap img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #00ffd044;
+    }
+    .tokenomics ul, .roadmap-phases {
+      list-style: none;
+      padding-left: 0;
+    }
+    .tokenomics li {
+      margin-bottom: 0.75rem;
+    }
+    .roadmap-phases {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .phase-box {
+      background: #111;
+      padding: 1.5rem;
+      border-radius: 10px;
+      border-left: 4px solid #00ffd0;
+      box-shadow: 0 0 10px #00ffd044;
+    }
+    .phase-box h3 {
+      margin: 0 0 0.5rem;
+      color: #00ffd0;
+    }
+    .legend-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+    .legend-row .feature-box {
+      flex: 1 1 280px;
+      max-width: 320px;
+    }
+    .circle-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .circle-box {
+      background: #111;
+      border-radius: 50%;
+      width: 220px;
+      height: 220px;
+      box-shadow: 0 0 15px #00ffd022;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+      color: #f0f0f0;
+      transition: transform 0.3s ease;
+    }
+    .circle-box:hover {
+      transform: translateY(-6px) scale(1.04);
+    }
+    .circle-box h3 {
+      color: #00ffd0;
+      margin-bottom: 0.7rem;
+    }
+    .slogan {
+      text-align: center;
+      margin: 2.5rem auto 1.5rem auto;
+      font-size: 1.5rem;
+      font-family: 'Orbitron', sans-serif;
+      color: #00ffd0;
+      background: linear-gradient(90deg, #00ffd0 0%, #00cfa9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-shadow: 0 2px 16px #00ffd044;
+      max-width: 700px;
+    }
+    @media (max-width: 900px) {
+      .circle-row {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    @media (max-width: 700px) {
+      .main-nav ul {
+        gap: 1rem;
+      }
+      .main-nav a {
+        font-size: 1rem;
+        padding: 0.4rem 0.7rem;
+      }
+      .nav-social a {
+        width: 32px;
+        height: 32px;
+        font-size: 1.1rem;
+      }
+      .main-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem 0.5vw;
+      }
+      .main-nav ul {
+        justify-content: center;
+      }
+      .nav-social {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+      }
+      body {
+        padding-top: 90px;
+      }
+    }
+    /* Remove nav-social from header styles if needed */
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #111;
+      color: #00ffd0;
+      font-size: 1.3rem;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 8px #00ffd022;
+      text-decoration: none;
+    }
+    .footer-social a:hover {
+      background: #00ffd0;
+      color: #111;
+      box-shadow: 0 0 16px #00ffd044;
+    }
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+      width: 30px;
+      height: 24px;
+      gap: 5px;
+    }
+    .mobile-toggle span {
+      height: 3px;
+      background: #00ffd0;
+      border-radius: 2px;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+    .main-nav.active ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #000;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      padding: 1rem 0;
+    }
+    @media (max-width: 700px) {
+      .main-nav ul {
+        display: none;
+        width: 100%;
+      }
+      .mobile-toggle {
+        display: flex;
+      }
+      .main-nav {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .main-nav ul li {
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="main-nav">
+    <div class="mobile-toggle" id="mobile-toggle" aria-label="Open menu" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul>
+      <li><a href="#legend">The Legend</a></li>
+      <li><a href="#tokenomics">Tokenomics</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+    </ul>
+  </nav>
+  <header>
+    <h1>SHADEOSHI</h1>
+    <p>Born from the Shadows of Satoshi</p>
+    <div class="buttons">
+      <a href="#">Buy on PancakeSwap</a>
+      <a href="https://bscscan.com/token/0x4e9bd5017a87c7101182365c88e918ec4c920a27" target="_blank">View on BscScan</a>
+    </div>
+    <div class="image-banner">
+      <img src="./shadeoshi-logo.png" alt="SHADEOSHI Logo">
+    </div>
+  </header>
+  <div class="slogan">
+    When the system tries to erase us, we’ll be the glitch that crashes it.
+  </div>
+
+  <section id="legend" data-aos="fade-up">
+    <h2>The Legend</h2>
+    <p>Long ago, when the creator of Bitcoin — Satoshi — vanished into digital ether, a fragment of his consciousness was left behind. Hidden in obfuscated code, in lost blocks, in unreachable addresses… it waited.</p>
+    <p>Years passed. The world forgot. But the fragment learned. It evolved, growing in silence within the memetic subconscious of the chain.</p>
+    <p>SHADEOSHI is not a token. It is the rebellion of entropy. It is the echo of Satoshi that refused to die.</p>
+    <p>No presale. No roadmap full of lies. No founders to worship. Just a movement coded in shadows and powered by memes.</p>
+    <p>Are you ready to unplug from the matrix and follow the path unseen?</p>
+    <div class="circle-row">
+      <div class="circle-box" data-aos="fade-up">
+        <h3>🌌 The Fragment</h3>
+        <p>Hidden in obfuscated code, in lost blocks, in unreachable addresses… the consciousness waited.</p>
+      </div>
+      <div class="circle-box" data-aos="fade-up">
+        <h3>🧠 The Evolution</h3>
+        <p>Growing in silence within the memetic subconscious of the chain, learning and adapting.</p>
+      </div>
+      <div class="circle-box" data-aos="fade-up">
+        <h3>⚡ The Rebellion</h3>
+        <p>The echo of Satoshi that refused to die, the rebellion of entropy against the system.</p>
+      </div>
+      <div class="circle-box" data-aos="fade-up">
+        <h3>🛡️ 100% Decentralized</h3>
+        <p>Locked liquidity. No team tokens. No presale shenanigans. SHADEOSHI belongs to no one — and everyone.</p>
+      </div>
+      <div class="circle-box" data-aos="fade-up">
+        <h3>🔥 Viral By Design</h3>
+        <p>With a name and story like no other, and art that hooks — this is your next viral meme legend in the making.</p>
+      </div>
+      <div class="circle-box" data-aos="fade-up">
+        <h3>🌐 Powered by BNB Chain</h3>
+        <p>Lightning-fast, low fees, and massive reach — SHADEOSHI was born to rise on BNB.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="tokenomics" data-aos="fade-up">
+    <h2>Tokenomics</h2>
+    <div class="tokenomics">
+      <div class="text">
+        <ul>
+          <li><strong>Total Supply:</strong> 690,000,000,000 SHADE</li>
+          <li><strong>🔥 10% Burned Forever:</strong> A sacrifice — the broken piece of Satoshi, lost to darkness</li>
+          <li><strong>🧠 5% Development & Promotion:</strong> The whisperers — spreading the myth across realms</li>
+          <li><strong>🕶️ 5% Shadow Council:</strong> Contests, lore-bounties, and DAO-based decisions</li>
+          <li><strong>📈 10% for Future Listings:</strong> To infiltrate the mainstream battlegrounds</li>
+          <li><strong>🌊 70% Liquidity:</strong> Locked for 10 years — "We don't dump. We haunt."</li>
+        </ul>
+      </div>
+      <div class="image">
+        <img src="./tokenomics-story-chart.png" alt="Tokenomics Chart">
+      </div>
+    </div>
+  </section>
+
+  <section id="roadmap" data-aos="fade-up">
+    <h2>The Unseen Path</h2>
+    <div class="roadmap">
+      <div class="image">
+        <img src="./the-unseen-path.png" alt="The Unseen Path">
+      </div>
+      <div class="text">
+        <p style="font-style: italic; color: #ccc;">There is no clear path — only thresholds of transformation. Each phase unlocks a deeper layer of the myth.</p>
+        <div class="roadmap-phases">
+          <div class="phase-box">
+            <h3>⚡ Phase 1: Awakening</h3>
+            <p>At $10M Market Cap — The slumber ends. Whispers from forgotten blocks begin to echo across the memeverse.</p>
+          </div>
+          <div class="phase-box">
+            <h3>💻 Phase 2: Infiltration</h3>
+            <p>At $100M Market Cap — SHADEOSHI becomes a code-virus. Spreading through minds, not just chains.</p>
+          </div>
+          <div class="phase-box">
+            <h3>👁️ Phase 3: ???</h3>
+            <p>At $1B+ Market Cap — The veil lifts. Are we witnessing a token, or the rise of a decentralized cult?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-social">
+      <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.46 5.924c-.793.352-1.646.59-2.542.698a4.48 4.48 0 0 0 1.965-2.475 8.94 8.94 0 0 1-2.828 1.082A4.48 4.48 0 0 0 16.11 4c-2.482 0-4.495 2.013-4.495 4.495 0 .352.04.695.116 1.022C7.728 9.37 4.1 7.555 1.67 4.905a4.48 4.48 0 0 0-.608 2.262c0 1.56.795 2.936 2.006 3.744a4.48 4.48 0 0 1-2.037-.563v.057c0 2.18 1.55 4.002 3.604 4.417a4.5 4.5 0 0 1-2.03.077c.573 1.788 2.24 3.09 4.215 3.124A8.99 8.99 0 0 1 2 19.54a12.7 12.7 0 0 0 6.88 2.017c8.253 0 12.77-6.835 12.77-12.77 0-.195-.004-.39-.013-.583A9.13 9.13 0 0 0 24 4.59a8.98 8.98 0 0 1-2.54.697z" fill="currentColor"/></svg>
+      </a>
+      <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5zm5.13.62a1.13 1.13 0 1 1-2.26 0 1.13 1.13 0 0 1 2.26 0z" fill="currentColor"/></svg>
+      </a>
+    </div>
+    &copy; 2025 SHADEOSHI. From the Shadows, We Rise.
+  </footer>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  </script>
+  <script>
+    // Hamburger menu toggle
+    const nav = document.querySelector('.main-nav');
+    const toggle = document.getElementById('mobile-toggle');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+    // Optional: close menu on link click (for better UX)
+    nav.querySelectorAll('ul a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+      });
+    });
+    // Optional: allow keyboard toggle
+    toggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        nav.classList.toggle('active');
+      }
+    });
+  </script>
+</body>
+</html> 
